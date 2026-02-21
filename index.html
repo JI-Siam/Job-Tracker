@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Job Tracker</title>
+</head>
+<body>
+
+    <header class="sm:m-20 m-10">
+
+         <h1 class="text-4xl text-primary font-extrabold">Job Application Tracker</h1>
+
+         <div class="stats-container gap-4 grid grid-cols-1 sm:grid-cols-3 my-10">
+            <div class="stats-card rounded-md border border-gray-100 shadow-xs px-5 py-3  space-y-2">
+                <h3 class="text-gray-800">Total</h3>
+                <h2 id="total-cnt" class="font-bold text-xl">8</h2>
+            </div>
+
+            <div class="stats-card rounded-md  border border-gray-100 shadow-xs px-5 py-3 space-y-2">
+                <h3 class="text-gray-800">Interview</h3>
+                <h2 id="interview-cnt" class="text-green-600 font-bold text-xl">0</h2>
+            </div>
+
+            <div class="stats-card rounded-md  border border-gray-100 shadow-xs px-5 py-3 space-y-2">
+                <h3 class="text-gray-800">Rejected</h3>
+                <h2 id="rejected-cnt" class="text-red-600 text-xl font-bold">0</h2>
+            </div>
+
+         </div>
+
+    </header>
+
+    <main class="sm:m-20 m-10">
+        <section>
+            <div class="flex justify-between my-10">
+                <h1 class="text-2xl font-bold">Available Jobs</h1>
+                <h1 id="jobs-cnt">8 jobs</h1>
+            </div>
+            <div>
+                <button id="btn-all" class="btn-primary btn px-8">All</button>
+                <button id="btn-interview" class="btn btn-primary btn-soft">Interview</button>
+                <button id="btn-rejected" class="btn btn-primary btn-soft">Rejected</button>
+            </div>
+        </section>
+
+        <section class="all-jobs">
+            <div class="container-all my-10 flex flex-col gap-4">
+                <div class="job-card card-1 border border-gray-100 rounded-xs shadow-2xs p-5">
+                    <div class="card-top flex justify-between items-center mb-5">
+                        <div class="space-y-2">
+                            <h1 class="text-xl font-bold">Mobile First Corp</h1>
+                            <h2 class="text-md ">React Native Developer</h2>
+                         </div>
+
+                        <div>
+                           <button class="btn-delete cursor-pointer"> <i class="hover:text-red-300 fa-regular fa-trash-can"></i></button>
+                        </div>
+                    </div>
+                    <h3 class="text-xs mb-3">Remote . Full-time . 50000$ - 10000$</h3>
+
+                    <button  class="interview-mark btn btn-neutral btn-soft" disabled>Not Applied</button>
+
+                    <button class="reject-mark btn btn-neutral btn-soft" hidden disabled>Not Applied</button>
+
+                    <p class="my-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas quo molestiae quia asperiores laudantium dignissimos nam eaque quasi fugit adipisci cumque, praesentium deleniti nesciunt odio consequatur animi totam corporis dolorum.</p>
+
+
+                     <button class="interview-mark-btn btn btn-success btn-outline mr-1 sm:mr-4">Interview</button>
+
+                    <button  class="reject-mark-btn btn btn-error btn-outline" >Rejected</button>
+
+                   
+                </div>
+            </div>
+        </section>
+    </main>
+
+   
+    
+</body>
+<script src="./js/alljobs.js"></script>
+</html>
