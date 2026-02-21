@@ -1,11 +1,17 @@
 const interviewBtnElement = document.querySelectorAll('.interview-mark-btn')  ;
 const  rejectBtnElement = document.querySelectorAll('.reject-mark-btn')  ;
 const allJobsCntElement = document.getElementById('all-jobs-cnt') ; 
+const deleteBtn = document.querySelectorAll('.btn-delete') ; 
+
+console.log(deleteBtn) ; 
+
 const interviewJobsCntElement = document.getElementById('interview-jobs-cnt') ; 
 const rejectedJobsCntElement = document.getElementById('rejected-jobs-cnt') ; 
 
+const totalCntElement = document.getElementById('total-cnt'); 
 const allCount = getJobCountByContainer('container-all'); 
 allJobsCntElement.innerText=`${allCount} jobs`; 
+totalCntElement.innerText =`${allCount}`;
 
 console.log(interviewBtnElement) ; 
 console.log(rejectBtnElement); 
@@ -22,6 +28,7 @@ rejectBtnElement.forEach(element => {
             cntElement.innerText=newCount ;
             element.parentNode.querySelector('.interview-mark-btn').disabled= false ;
             element.parentNode.classList.remove('interviewed-job') ; 
+            element.parentNode.hidden = true; 
         }
 
         interviewMarkElement.innerText= "Rejected" ;
@@ -40,7 +47,6 @@ rejectBtnElement.forEach(element => {
    
 });
 
-
 interviewBtnElement.forEach(element => {
     element.addEventListener('click', ()=>{
 
@@ -53,6 +59,7 @@ interviewBtnElement.forEach(element => {
             cntElement.innerText=newCount ;
             element.parentNode.querySelector('.reject-mark-btn').disabled= false ;
             element.parentNode.classList.remove('rejected-job') ; 
+            element.parentNode.hidden = true; 
         }
         console.log(interviewMarkElement) ;
         interviewMarkElement.innerText= "Interviewed" ;
@@ -72,5 +79,19 @@ interviewBtnElement.forEach(element => {
     })
    
 });
+
+deleteBtn.forEach(element => {
+    element.addEventListener('click' , ()=>{
+        console.log(element.parentNode.parentNode.parentNode); 
+       element.parentNode.parentNode.parentNode.remove();
+       const allCount = getJobCountByContainer('container-all'); 
+    allJobsCntElement.innerText=`${allCount} jobs`; 
+    totalCntElement.innerText =`${allCount}`;
+    })
+       
+});
+
+
+
 
 
