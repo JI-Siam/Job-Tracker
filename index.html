@@ -37,23 +37,25 @@
     </header>
 
     <main class="sm:m-20 m-10">
-        <section>
-            <div class="flex justify-between my-10">
+
+        <section class="all-jobs">
+
+            <div class="nav-bar">
+                <div class="flex justify-between my-10">
                 <h1 class="text-2xl font-bold">Available Jobs</h1>
-                <h1 id="jobs-cnt">8 jobs</h1>
+                <h1 id="all-jobs-cnt">8 jobs</h1>
             </div>
             <div>
                 <button id="btn-all" class="btn-primary btn px-8">All</button>
-                <button id="btn-interview" class="btn btn-primary btn-soft">Interview</button>
-                <button id="btn-rejected" class="btn btn-primary btn-soft">Rejected</button>
+                <button id="btn-interview" class="btn btn btn-soft">Interview</button>
+                <button id="btn-rejected" class="btn btn btn-soft">Rejected</button>
             </div>
-        </section>
-
-        <section class="all-jobs">
-            <div class="container-all my-10 flex flex-col gap-4">
+            </div>
+            
+            <div id="container-all" class=" my-10 flex flex-col gap-4">
                 <div class="job-card card-1 border border-gray-100 rounded-xs shadow-2xs p-5">
-                    <div class="card-top flex justify-between items-center mb-5">
-                        <div class="space-y-2">
+                    <div class="card-top flex justify-between items-center mb-5 gap-2">
+                        <div class="space-y-1">
                             <h1 class="text-xl font-bold">Mobile First Corp</h1>
                             <h2 class="text-md ">React Native Developer</h2>
                          </div>
@@ -64,9 +66,57 @@
                     </div>
                     <h3 class="text-xs mb-3">Remote . Full-time . 50000$ - 10000$</h3>
 
-                    <button  class="interview-mark btn btn-neutral btn-soft" disabled>Not Applied</button>
+                    <button  class="mark btn btn-neutral btn-soft" disabled>Not Applied</button>
 
-                    <button class="reject-mark btn btn-neutral btn-soft" hidden disabled>Not Applied</button>
+                    <p class="my-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas quo molestiae quia asperiores laudantium dignissimos nam eaque quasi fugit adipisci cumque, praesentium deleniti nesciunt odio consequatur animi totam corporis dolorum.</p>
+
+
+                     <button class="interview-mark-btn btn btn-success btn-outline mr-1 sm:mr-4">Interview</button>
+
+                    <button  class="reject-mark-btn btn btn-error btn-outline" >Rejected</button>
+
+                   
+                </div>
+
+                <div class="job-card card-1 border border-gray-100 rounded-xs shadow-2xs p-5">
+                    <div class="card-top flex justify-between items-center mb-5 gap-2">
+                        <div class="space-y-1">
+                            <h1 class="text-xl font-bold">Mobile First Corp</h1>
+                            <h2 class="text-md ">React Native Developer</h2>
+                         </div>
+
+                        <div>
+                           <button class="btn-delete cursor-pointer"> <i class="hover:text-red-300 fa-regular fa-trash-can"></i></button>
+                        </div>
+                    </div>
+                    <h3 class="text-xs mb-3">Remote . Full-time . 50000$ - 10000$</h3>
+
+                    <button  class="mark btn btn-neutral btn-soft" disabled>Not Applied</button>
+
+                    <p class="my-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas quo molestiae quia asperiores laudantium dignissimos nam eaque quasi fugit adipisci cumque, praesentium deleniti nesciunt odio consequatur animi totam corporis dolorum.</p>
+
+
+                     <button class="interview-mark-btn btn btn-success btn-outline mr-1 sm:mr-4">Interview</button>
+
+                    <button  class="reject-mark-btn btn btn-error btn-outline" >Rejected</button>
+
+                   
+                </div>
+
+                 <div class="job-card card-1 border border-gray-100 rounded-xs shadow-2xs p-5">
+                    <div class="card-top flex justify-between items-center mb-5 gap-2">
+                        <div class="space-y-1">
+                            <h1 class="text-xl font-bold">Mobile First Corp</h1>
+                            <h2 class="text-md ">React Native Developer</h2>
+                         </div>
+
+                        <div>
+                           <button class="btn-delete cursor-pointer"> <i class="hover:text-red-300 fa-regular fa-trash-can"></i></button>
+                        </div>
+                    </div>
+                    <h3 class="text-xs mb-3">Remote . Full-time . 50000$ - 10000$</h3>
+
+                    <button  class="mark btn btn-neutral btn-soft" disabled>Not Applied</button>
 
                     <p class="my-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas quo molestiae quia asperiores laudantium dignissimos nam eaque quasi fugit adipisci cumque, praesentium deleniti nesciunt odio consequatur animi totam corporis dolorum.</p>
 
@@ -78,11 +128,16 @@
                    
                 </div>
             </div>
+
+            
         </section>
+
     </main>
 
    
     
 </body>
+<script src="./js/machine.js"></script>
 <script src="./js/alljobs.js"></script>
-</html>
+<script src="./js/nav.js"></script>
+</html>s
