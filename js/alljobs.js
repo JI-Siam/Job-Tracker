@@ -111,22 +111,24 @@ deleteBtn.forEach(element => {
        const allCount = getJobCountByContainer('container-all'); 
     allJobsCntElement.innerText=`${allCount} jobs`; 
     totalCntElement.innerText =`${allCount}`;
+    var newCount; 
    
     const interviewMarkElement = element.parentNode.parentNode.parentNode.querySelector('.mark') ; 
 
           if(interviewMarkElement.innerText == "Interviewed"){
             const cntElement = document.getElementById('interview-cnt') ; 
-            var newCount= Number(cntElement.innerText) - 1 ;
+            newCount= Number(cntElement.innerText) - 1 ;
             cntElement.innerText=newCount ;
         }
 
         if(interviewMarkElement.innerText == "Rejected"){
             const cntElement = document.getElementById('rejected-cnt') ; 
-            var newCount= Number(cntElement.innerText) - 1 ; 
+            newCount= Number(cntElement.innerText) - 1 ; 
             cntElement.innerText=newCount ;
         }
 
          if(rejectBtn.classList.contains('btn-primary')){
+            allJobsCntElement.innerText=`${newCount} of ${allCount}`; 
                       // show the no jobs container if new counts becomes 0 after updating 
                      if(newCount == 0 ) {
                        noJobsContainer.classList.remove('hidden')  ; 
@@ -134,6 +136,7 @@ deleteBtn.forEach(element => {
             }
 
          if(interviewBtn.classList.contains('btn-primary')){
+            allJobsCntElement.innerText=`${newCount} of ${allCount}`; 
                  // show the no jobs container if new counts becomes 0 after updating 
                      if(newCount ==0 ) {
                        noJobsContainer.classList.remove('hidden')  ; 
