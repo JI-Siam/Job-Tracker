@@ -6,6 +6,9 @@ const deleteBtn = document.querySelectorAll('.btn-delete') ;
 const interviewJobsCntElement = document.getElementById('interview-jobs-cnt') ; 
 const rejectedJobsCntElement = document.getElementById('rejected-jobs-cnt') ; 
 
+const noJobsContainer = document.getElementById('no-jobs-container') ; 
+
+
 const totalCntElement = document.getElementById('total-cnt'); 
 const allCount = getJobCountByContainer('container-all'); 
 allJobsCntElement.innerText=`${allCount} jobs`; 
@@ -23,15 +26,18 @@ rejectBtnElement.forEach(element => {
             cntElement.innerText=newCount ;
             element.parentNode.querySelector('.interview-mark-btn').disabled= false ;
             element.parentNode.classList.remove('interviewed-job') ; 
-            
-
              const interviewBtn = document.getElementById('btn-interview');
 
            // console.log("Interview Tab Btn Class : " + interviewBtn.classList.contains('btn-primary')) ;
 
             // HIDE THE ITEM IF INSIDE interviewed TAB 
             if(interviewBtn.classList.contains('btn-primary')){
+                 allJobsCntElement.innerText=`${newCount} of ${allCount} `;
                      element.parentNode.hidden = true; 
+                 // show the no jobs tab if new counts becomes 0 after updating 
+                     if(newCount ==0 ) {
+                       noJobsContainer.classList.remove('hidden')  ; 
+                     }
             }
         }
 
@@ -71,7 +77,12 @@ interviewBtnElement.forEach(element => {
 
             // HIDE THE ITEM IF INSIDE REJECTED TAB 
             if(rejectBtn.classList.contains('btn-primary')){
+                 allJobsCntElement.innerText=`${newCount} of ${allCount} `;
                      element.parentNode.hidden = true; 
+                      // show the no jobs tab if new counts becomes 0 after updating 
+                     if(newCount == 0 ) {
+                       noJobsContainer.classList.remove('hidden')  ; 
+                     }
             }
         }
         //console.log(interviewMarkElement) ;
@@ -114,6 +125,22 @@ deleteBtn.forEach(element => {
             var newCount= Number(cntElement.innerText) - 1 ; 
             cntElement.innerText=newCount ;
         }
+
+         if(rejectBtn.classList.contains('btn-primary')){
+                      // show the no jobs container if new counts becomes 0 after updating 
+                     if(newCount == 0 ) {
+                       noJobsContainer.classList.remove('hidden')  ; 
+                     }
+            }
+
+         if(interviewBtn.classList.contains('btn-primary')){
+                 // show the no jobs container if new counts becomes 0 after updating 
+                     if(newCount ==0 ) {
+                       noJobsContainer.classList.remove('hidden')  ; 
+                     }
+            }
+
+
     }) ; 
        
 });

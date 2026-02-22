@@ -2,6 +2,9 @@ const allBtn = document.getElementById('btn-all') ;
 const interviewBtn = document.getElementById('btn-interview') ; 
 const rejectBtn = document.getElementById('btn-rejected');
 
+
+
+
 allBtn.addEventListener('click' , (e)=>{
     removeAllBtn(); 
     markPrimaryBtn(allBtn); 
