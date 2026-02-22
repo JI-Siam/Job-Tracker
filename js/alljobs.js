@@ -3,8 +3,6 @@ const  rejectBtnElement = document.querySelectorAll('.reject-mark-btn')  ;
 const allJobsCntElement = document.getElementById('all-jobs-cnt') ; 
 const deleteBtn = document.querySelectorAll('.btn-delete') ; 
 
-console.log(deleteBtn) ; 
-
 const interviewJobsCntElement = document.getElementById('interview-jobs-cnt') ; 
 const rejectedJobsCntElement = document.getElementById('rejected-jobs-cnt') ; 
 
@@ -13,18 +11,15 @@ const allCount = getJobCountByContainer('container-all');
 allJobsCntElement.innerText=`${allCount} jobs`; 
 totalCntElement.innerText =`${allCount}`;
 
-console.log(interviewBtnElement) ; 
-console.log(rejectBtnElement); 
-
 rejectBtnElement.forEach(element => {
     element.addEventListener('click', ()=>{
         const interviewMarkElement = element.parentNode.querySelector('.mark') ; 
-        console.log(interviewMarkElement) ;
+        //console.log(interviewMarkElement) ;
 
           if(interviewMarkElement.innerText == "Interviewed"){
             const cntElement = document.getElementById('interview-cnt') ; 
             var newCount= Number(cntElement.innerText) - 1 ; 
-            console.log(newCount) ;
+           // console.log(newCount) ;
             cntElement.innerText=newCount ;
             element.parentNode.querySelector('.interview-mark-btn').disabled= false ;
             element.parentNode.classList.remove('interviewed-job') ; 
@@ -32,7 +27,7 @@ rejectBtnElement.forEach(element => {
 
              const interviewBtn = document.getElementById('btn-interview');
 
-            console.log("Interview Tab Btn Class : " + interviewBtn.classList.contains('btn-primary')) ;
+           // console.log("Interview Tab Btn Class : " + interviewBtn.classList.contains('btn-primary')) ;
 
             // HIDE THE ITEM IF INSIDE interviewed TAB 
             if(interviewBtn.classList.contains('btn-primary')){
@@ -46,9 +41,9 @@ rejectBtnElement.forEach(element => {
         interviewMarkElement.disabled = false; 
         
         const cntElement = document.getElementById('rejected-cnt') ; 
-        console.log(cntElement) ;
+       // console.log(cntElement) ;
         var newCount= Number(cntElement.innerText) + 1 ; 
-        console.log(newCount) ;
+       // console.log(newCount) ;
         cntElement.innerText=newCount ; 
         element.disabled= true;
          element.parentElement.classList.add('rejected-job');
@@ -72,23 +67,23 @@ interviewBtnElement.forEach(element => {
 
             const rejectBtn = document.getElementById('btn-rejected');
 
-            console.log("Rejected Tab Btn Class : " + rejectBtn.classList.contains('btn-primary')) ;
+            //console.log("Rejected Tab Btn Class : " + rejectBtn.classList.contains('btn-primary')) ;
 
             // HIDE THE ITEM IF INSIDE REJECTED TAB 
             if(rejectBtn.classList.contains('btn-primary')){
                      element.parentNode.hidden = true; 
             }
         }
-        console.log(interviewMarkElement) ;
+        //console.log(interviewMarkElement) ;
         interviewMarkElement.innerText= "Interviewed" ;
         interviewMarkElement.classList.remove('btn-neutral',  'btn-soft' , 'btn-error');
         interviewMarkElement.classList.add('btn', 'btn-success'); 
         interviewMarkElement.disabled = false; 
         
         const cntElement = document.getElementById('interview-cnt') ; 
-        console.log(cntElement) ;
+        //console.log(cntElement) ;
         var newCount= Number(cntElement.innerText) + 1 ; 
-        console.log(newCount) ;
+        //console.log(newCount) ;
         cntElement.innerText=newCount ; 
 
         element.disabled= true;

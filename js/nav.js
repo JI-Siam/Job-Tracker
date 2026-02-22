@@ -7,7 +7,7 @@ allBtn.addEventListener('click' , (e)=>{
     markPrimaryBtn(allBtn); 
    unHideAllJobs() ; 
    allJobsCntElement.innerText=`${allCount} jobs`; 
-   console.log(document.getElementById('no-jobs-container')) ;
+  // console.log(document.getElementById('no-jobs-container')) ;
      document.getElementById('no-jobs-container').classList.add('hidden')  ;  
 }); 
 
@@ -19,7 +19,7 @@ interviewBtn.addEventListener('click' , ()=>{
 
     const container = document.getElementById('container-all');
     const interviewedJobs = container.querySelectorAll('.interviewed-job');
-    console.log(interviewedJobs.length);
+    //console.log(interviewedJobs.length);
     hideAllJobs() ;
 
     interviewedJobs.forEach(element => {
@@ -30,8 +30,11 @@ interviewBtn.addEventListener('click' , ()=>{
     allJobsCntElement.innerText=`${interviewCount} of ${allCount} `;
     
     if(interviewedJobs.length ==0){
-        console.log(document.getElementById('no-jobs-container')) ;
+        //console.log(document.getElementById('no-jobs-container')) ;
           document.getElementById('no-jobs-container').classList.remove('hidden')  ; 
+    }
+    else{
+        document.getElementById('no-jobs-container').classList.add('hidden')  ; 
     }
 }) ;
 
@@ -57,7 +60,10 @@ rejectBtn.addEventListener('click' , ()=>{
 
     console.log(rejectedCount) ; 
     if(rejectedCount == 0 ){
-        console.log(document.getElementById('no-jobs-container')) ;
+        //console.log(document.getElementById('no-jobs-container')) ;
         document.getElementById('no-jobs-container').classList.remove('hidden')  ; 
+    }
+     else{
+        document.getElementById('no-jobs-container').classList.add('hidden')  ; 
     }
 }) ;
