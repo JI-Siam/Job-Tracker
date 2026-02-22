@@ -7,6 +7,8 @@ allBtn.addEventListener('click' , (e)=>{
     markPrimaryBtn(allBtn); 
    unHideAllJobs() ; 
    allJobsCntElement.innerText=`${allCount} jobs`; 
+   console.log(document.getElementById('no-jobs-container')) ;
+     document.getElementById('no-jobs-container').classList.add('hidden')  ;  
 }); 
 
 
@@ -25,7 +27,12 @@ interviewBtn.addEventListener('click' , ()=>{
     });
 
     const interviewCount = interviewedJobs.length; 
-    allJobsCntElement.innerText=`${interviewCount} of ${allCount} `;  
+    allJobsCntElement.innerText=`${interviewCount} of ${allCount} `;
+    
+    if(interviewedJobs.length ==0){
+        console.log(document.getElementById('no-jobs-container')) ;
+          document.getElementById('no-jobs-container').classList.remove('hidden')  ; 
+    }
 }) ;
 
 
@@ -37,7 +44,7 @@ rejectBtn.addEventListener('click' , ()=>{
     const container = document.getElementById('container-all');
     const rejectedJobs = container.querySelectorAll('.rejected-job');
 
-console.log(rejectedJobs.length);
+    console.log(rejectedJobs.length);
 
     hideAllJobs() ;
 
@@ -47,4 +54,9 @@ console.log(rejectedJobs.length);
 
     const rejectedCount = rejectedJobs.length; 
     allJobsCntElement.innerText=`${rejectedCount} of ${allCount} `; 
+
+    if(rejectedJobs.length ==0 ){
+        console.log(document.getElementById('no-jobs-container')) ;
+        document.getElementById('no-jobs-container').classList.remove('hidden')  ; 
+    }
 }) ;
