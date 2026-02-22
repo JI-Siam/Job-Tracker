@@ -87,7 +87,21 @@ deleteBtn.forEach(element => {
        const allCount = getJobCountByContainer('container-all'); 
     allJobsCntElement.innerText=`${allCount} jobs`; 
     totalCntElement.innerText =`${allCount}`;
-    })
+   
+    const interviewMarkElement = element.parentNode.parentNode.parentNode.querySelector('.mark') ; 
+
+          if(interviewMarkElement.innerText == "Interviewed"){
+            const cntElement = document.getElementById('interview-cnt') ; 
+            var newCount= Number(cntElement.innerText) - 1 ;
+            cntElement.innerText=newCount ;
+        }
+
+        if(interviewMarkElement.innerText == "Rejected"){
+            const cntElement = document.getElementById('rejected-cnt') ; 
+            var newCount= Number(cntElement.innerText) - 1 ; 
+            cntElement.innerText=newCount ;
+        }
+    }) ; 
        
 });
 
