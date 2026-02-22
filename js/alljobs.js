@@ -28,7 +28,16 @@ rejectBtnElement.forEach(element => {
             cntElement.innerText=newCount ;
             element.parentNode.querySelector('.interview-mark-btn').disabled= false ;
             element.parentNode.classList.remove('interviewed-job') ; 
-            element.parentNode.hidden = true; 
+            
+
+             const interviewBtn = document.getElementById('btn-interview');
+
+            console.log("Interview Tab Btn Class : " + interviewBtn.classList.contains('btn-primary')) ;
+
+            // HIDE THE ITEM IF INSIDE interviewed TAB 
+            if(interviewBtn.classList.contains('btn-primary')){
+                     element.parentNode.hidden = true; 
+            }
         }
 
         interviewMarkElement.innerText= "Rejected" ;
@@ -50,16 +59,25 @@ rejectBtnElement.forEach(element => {
 interviewBtnElement.forEach(element => {
     element.addEventListener('click', ()=>{
 
+        // status 
         const interviewMarkElement = element.parentNode.querySelector('.mark') ; 
 
+        // if status is already in rejected state - toggle to interview
         if(interviewMarkElement.innerText == "Rejected"){
             const cntElement = document.getElementById('rejected-cnt') ; 
             var newCount= Number(cntElement.innerText) - 1 ; 
-            console.log(newCount) ;
             cntElement.innerText=newCount ;
             element.parentNode.querySelector('.reject-mark-btn').disabled= false ;
-            element.parentNode.classList.remove('rejected-job') ; 
-            element.parentNode.hidden = true; 
+            element.parentNode.classList.remove('rejected-job') ;
+
+            const rejectBtn = document.getElementById('btn-rejected');
+
+            console.log("Rejected Tab Btn Class : " + rejectBtn.classList.contains('btn-primary')) ;
+
+            // HIDE THE ITEM IF INSIDE REJECTED TAB 
+            if(rejectBtn.classList.contains('btn-primary')){
+                     element.parentNode.hidden = true; 
+            }
         }
         console.log(interviewMarkElement) ;
         interviewMarkElement.innerText= "Interviewed" ;

@@ -55,7 +55,8 @@ rejectBtn.addEventListener('click' , ()=>{
     const rejectedCount = rejectedJobs.length; 
     allJobsCntElement.innerText=`${rejectedCount} of ${allCount} `; 
 
-    if(rejectedJobs.length ==0 ){
+    console.log(rejectedCount) ; 
+    if(rejectedCount == 0 ){
         console.log(document.getElementById('no-jobs-container')) ;
         document.getElementById('no-jobs-container').classList.remove('hidden')  ; 
     }
