@@ -6,14 +6,15 @@
     <dd>
      Get Element By ID : get an element by Id name <br>
      getElementsByClassName : get elements by class name - return HTML collections<br>
-     querySelector : get an element using id , class , tagname  
+     querySelector : get an element using id , class , tagname   <br>
      querySelectorAll : get all elements using id , class , tagname - returns multiple 
     </dd>
 
 <dt>How do you create and insert a new element into the DOM?</dt>
 
   <dd>
-    const containerElement = document.getElemenyById('box') ; 
+    const newDiv = document.createElement("div") ; <br>
+    const containerElement = document.getElemenyById('box') ; <br>
     containerElement.appendChild(newDiv) ; 
   </dd>
 
